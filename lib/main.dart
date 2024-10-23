@@ -29,7 +29,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.menu),
-        title: Center(child: Text("Indiaretaling.com")),
+        title: Center(
+          child: Image.asset(
+            'images/indiaretail-logo-23 1.png', // Path to your asset image
+            height: 40, // Set height according to your design
+            fit: BoxFit.contain, // Ensure the image fits well in the space
+          ),
+        ),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -39,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -46,83 +53,187 @@ class _MyHomePageState extends State<MyHomePage> {
             ClipRect(
               child: Container(
                 color: Colors.white,
-                height: 120,
                 child: Column(
                   children: [
                     // First Row with Image and Text
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: ClipRect(
-                            child: Container(
-                              color: Colors.grey[300], // Placeholder color
-                              width: 90,
-                              height: 90,
-                              child: Center(
-                                child: Text(
-                                  'Image', // Placeholder for image
-                                  style: TextStyle(color: Colors.black54),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+                      child: Row(
+                        children: [
+                          // First row item
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: ClipRect(
+                              child: Container(
+                                color: Colors.grey[300], // Placeholder background color
+                                width: 80,
+                                height: 65,
+                                child: Center(
+                                  child: Image.asset(
+                                    'images/Link ⏵ news4.jpg (1).png', // Replace with your asset image path
+                                    fit: BoxFit.cover, // Ensures the image covers the container
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Center(
+                                        child: Text(
+                                          'Image not available', // Fallback text if the image fails to load
+                                          style: TextStyle(color: Colors.black54),
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'HotSports',
-                                  style: TextStyle(
-                                    fontSize: 15, // Font size for heading
-                                    color: Colors.orange, // Orange color for heading
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                SizedBox(height: 4), // Spacing between the texts
-                                Text(
-                                  'Stay updated with the latest news and advertisements.',
-                                  style: TextStyle(
-                                    fontSize: 16, // Smaller font size for description
-                                    color: Colors.black,
-                                  ),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        ClipRect(
-                          child: Container(
-                            color: Colors.grey[300], // Placeholder color
-                            width: 90,
-                            height: 90,
-                            child: Center(
-                              child: Image.network(
-                                'assets/images/newsimage.jpg', // Replace with your image URL
-                                fit: BoxFit.cover, // Scale the image to cover the entire area
-                                errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
-                                  return Center(
-                                    child: Text(
-                                      'Image not available', // Text to display if the image fails to load
-                                      style: TextStyle(color: Colors.black54),
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
 
-                      ],
+                          // Wrap this `Expanded` inside a `SizedBox` or `Container` to avoid layout issues.
+                          SizedBox(
+                            width: 250, // Define a fixed width for Expanded
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'HotSports',
+                                    style: TextStyle(
+                                      fontSize: 15, // Font size for heading
+                                      color: Colors.orange, // Orange color for heading
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  SizedBox(height: 4), // Spacing between the texts
+                                  Text(
+                                    'Stay updated with the latest news and advertisements.',
+                                    style: TextStyle(
+                                      fontSize: 16, // Smaller font size for description
+                                      color: Colors.black,
+                                    ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          // Second row item (duplicate or new)
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: ClipRect(
+                              child: Container(
+                                color: Colors.grey[300], // Placeholder background color
+                                width: 80,
+                                height: 65,
+                                child: Center(
+                                  child: Image.asset(
+                                    'images/news_image2.jpg', // Replace with your asset image path
+                                    fit: BoxFit.cover, // Ensures the image covers the container
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Center(
+                                        child: Text(
+                                          'Image not available', // Fallback text if the image fails to load
+                                          style: TextStyle(color: Colors.black54),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          // Wrap this `Expanded` inside a `SizedBox` or `Container` to avoid layout issues.
+                          SizedBox(
+                            width: 250, // Define a fixed width for Expanded
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'HotSports',
+                                    style: TextStyle(
+                                      fontSize: 15, // Font size for heading
+                                      color: Colors.orange, // Orange color for heading
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  SizedBox(height: 4), // Spacing between the texts
+                                  Text(
+                                    'Stay updated with the latest news and advertisements.',
+                                    style: TextStyle(
+                                      fontSize: 16, // Smaller font size for description
+                                      color: Colors.black,
+                                    ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),  Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: ClipRect(
+                              child: Container(
+                                color: Colors.grey[300], // Placeholder background color
+                                width: 80,
+                                height: 65,
+                                child: Center(
+                                  child: Image.asset(
+                                    'images/news_image2.jpg', // Replace with your asset image path
+                                    fit: BoxFit.cover, // Ensures the image covers the container
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Center(
+                                        child: Text(
+                                          'Image not available', // Fallback text if the image fails to load
+                                          style: TextStyle(color: Colors.black54),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          // Wrap this `Expanded` inside a `SizedBox` or `Container` to avoid layout issues.
+                          SizedBox(
+                            width: 250, // Define a fixed width for Expanded
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'HotSports',
+                                    style: TextStyle(
+                                      fontSize: 15, // Font size for heading
+                                      color: Colors.orange, // Orange color for heading
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  SizedBox(height: 4), // Spacing between the texts
+                                  Text(
+                                    'Stay updated with the latest news and advertisements.',
+                                    style: TextStyle(
+                                      fontSize: 16, // Smaller font size for description
+                                      color: Colors.black,
+                                    ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
@@ -132,30 +243,36 @@ class _MyHomePageState extends State<MyHomePage> {
             // ClipRect for the image container before the ListView
             ClipRect(
               child: Container(
-                color: Colors.grey[300], // Placeholder color
-                width: 350,
-                height: 250,
-                child: Center(
-                  child: Text(
-                    'Image', // Placeholder for image
-                    style: TextStyle(color: Colors.black54),
-                  ),
+                color: Colors.grey[300],
+                width: 340,
+                height: 200,
+                child: Image.asset(
+                  'images/news_image.jpg',
+                  fit: BoxFit.contain, // Ensures the whole image fits within the container
+                  errorBuilder: (context, error, stackTrace) {
+                    return Center(
+                      child: Text(
+                        'Image failed to load',
+                        style: TextStyle(color: Colors.black54),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
-            SizedBox(height: 10),
+
+            SizedBox(height: 5),
 
             // Main section for news articles
             Padding(
               padding: EdgeInsets.all(5.0),
               child: Row(
                 children: [
-
-                  SizedBox(width: 16), // Space between the star and text
+                  SizedBox(width: 20), // Space between the star and text
                   Text(
-                    'Heading',
+                    'Rahul Gandhi in manipure',
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -163,17 +280,17 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-
             // ListView displaying news articles and ads
+            // Set a fixed height for ListView inside SingleChildScrollView to avoid scroll conflict
             Container(
               height: 500,
               child: ListView(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(), // Disables ListView's internal scrolling
                 children: [
-                  newsArticle('Breaking News: Flutter is awesome!'),
-                  newsArticle('Top 10 tips for coding in Dart'),
-                  newsArticle('How to master mobile app development'),
+                  newsArticle('Breaking News: Flutter is awesome!', 'images/image 34 (1).png'),
+                  newsArticle('Top 10 tips for coding in Dart', 'images/image 34.png'),
+                  newsArticle('How to master mobile app development', 'images/image 34 (2).png'),
                 ],
               ),
             ),
@@ -200,25 +317,39 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-
             // GridView for advertisement images
             Container(
               height: 200, // Set a fixed height for the horizontal ListView
               child: ListView.builder(
                 scrollDirection: Axis.horizontal, // Scroll horizontally
-                itemCount: 2, // Number of ad images
+                itemCount: 3, // Number of ad images
                 itemBuilder: (BuildContext context, int index) {
+                  // List of asset image paths
+                  List<String> adImages = [
+                    'images/Link ⏵ newsimage8.png.png', // Path for the first ad image
+                    'images//Link ⏵ newsimage8.png.png', // Path for the second ad image
+                    'images//Link ⏵ newsimage8.png.png', // Path for the third ad image
+                  ];
+
                   return Padding(
                     padding: EdgeInsets.all(8.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: Container(
-                        width: 300, // Width of each container
-                        color: Colors.grey[300], // Placeholder for ad image
+                        width: 260, // Width of each container
+                        color: Colors.grey[300], // Placeholder background color
                         child: Center(
-                          child: Text(
-                            'Ad ${index + 1}', // Placeholder for ad
-                            style: TextStyle(color: Colors.black54),
+                          child: Image.asset(
+                            adImages[index], // Use the corresponding image path
+                            fit: BoxFit.cover, // Ensure the image covers the container
+                            errorBuilder: (context, error, stackTrace) {
+                              return Center(
+                                child: Text(
+                                  'Image not available', // Fallback text if the image fails to load
+                                  style: TextStyle(color: Colors.black54),
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ),
@@ -227,7 +358,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
             ),
-            SizedBox(height: 20), Container(
+
+            SizedBox(height: 20),
+
+            // Additional news section
+            Container(
               height: 400,
               child: ListView(
                 shrinkWrap: true,
@@ -238,12 +373,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   newsArticle1('How to master mobile app development', 'Steps and resources to become a master mobile developer.'),
                 ],
               ),
-            ),SizedBox(height: 20),Center(
+            ),
+
+            SizedBox(height: 20),
+            Center(
               child: Text(
-                '- Adverticement -',
+                '- Advertisement -',
                 style: TextStyle(
                   fontSize: 15, // Change font size to smaller
-
                 ),
               ),
             ),
@@ -251,21 +388,32 @@ class _MyHomePageState extends State<MyHomePage> {
             ClipRect(
               child: Container(
                 color: Colors.grey[300], // Placeholder color
-                width: 300,
-                height: 130,
+                width: 320,
+                height: 100,
                 child: Center(
-                  child: Text(
-                    'Image', // Placeholder for image
-                    style: TextStyle(color: Colors.black54),
+                  child: Image.asset(
+                    'images/image 155.png', // Path to your asset image
+                    fit: BoxFit.cover, // Ensure the image covers the container
+                    errorBuilder: (context, error, stackTrace) {
+                      return Center(
+                        child: Text(
+                          'Image not available', // Fallback text if the image fails to load
+                          style: TextStyle(color: Colors.black54),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
-            ),SizedBox(height: 30),
+            ),
+
+            SizedBox(height: 30),
           ],
         ),
       ),
     );
   }
+
   Widget newsArticle1(String title, String subtitle) {
     return Padding(
       padding: EdgeInsets.all(8.0),
@@ -276,10 +424,9 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 4,
         child: Padding(
           padding: EdgeInsets.all(16.0),
-          child: Column( // Change Row to Column
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start, // Align items to the start
             children: [
-              // Main title
               Text(
                 title,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -287,7 +434,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: 10), // Space between title and subtitle
-              // Subtitle text
               Text(
                 subtitle, // New subtitle parameter
                 style: TextStyle(fontSize: 14, color: Colors.grey), // Subtitle style
@@ -301,9 +447,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-
-  // Widget to display a news article with both text and an image
-  Widget newsArticle(String title) {
+  Widget newsArticle(String title, String imagePath) {
     return Padding(
       padding: EdgeInsets.all(8.0),
       child: Card(
@@ -315,16 +459,23 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.all(16.0),
           child: Row(
             children: [
-              ClipRect(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12), // Rounded corners for the image
                 child: Container(
-                  color: Colors.grey[300], // Placeholder color
-                  width: 100,
-                  height: 100,
-                  child: Center(
-                    child: Text(
-                      'Image', // Placeholder for image
-                      style: TextStyle(color: Colors.black54),
-                    ),
+                  color: Colors.grey[300], // Placeholder background color
+                  width: 130,
+                  height: 80,
+                  child: Image.asset(
+                    imagePath, // Use the passed image path
+                    fit: BoxFit.cover, // Make sure the image covers the container
+                    errorBuilder: (context, error, stackTrace) {
+                      return Center(
+                        child: Text(
+                          'Image not available', // Fallback text if the image fails to load
+                          style: TextStyle(color: Colors.black54),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
@@ -332,40 +483,13 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-
-  // Widget to display an ad banner
-  Widget adBanner(String adUrl) {
-    return Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        elevation: 4,
-        child: Column(
-          children: [
-            Text(
-              'Sponsored',
-              style: TextStyle(fontSize: 12, color: Colors.grey),
-            ),
-            SizedBox(height: 8),
-            ClipRRect(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(12)),
-              child: Image.network(adUrl, fit: BoxFit.cover),
-            ),
-          ],
         ),
       ),
     );

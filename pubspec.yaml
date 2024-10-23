@@ -55,7 +55,16 @@ flutter:
   uses-material-design: true
 
   assets:
-    # - assets/images/newsimage.jpg
+    - images/news_image.jpg
+    - images/news_image2.jpg
+    - images/image 34.png
+    - images/Group 18896.png
+    - images/Link ⏵ newsimage8.png.png
+    - images/image 155.png
+    - images/image 34 (2).png
+    - images/image 34 (1).png
+    - images/indiaretail-logo-23 1.png
+
 
 
 
